@@ -97,3 +97,18 @@ button:hover {
     font-weight: bold;
     font-size: 19px;
 }
+@media (max-width: 600px) {
+    .container {
+        width: 95%;
+        padding: 10px;
+    }
+    h1 {
+        font-size: 22px;
+        text-align: center;
+    }
+}
+@media (min-width: 1024px) {
+    .container {
+        width: 60%;
+    }
+}
