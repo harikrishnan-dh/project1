@@ -18,7 +18,7 @@ function calculate() {
         totalInterest = monthlyInterest * (duration * 12);
     }
 
-    let totalPay = emi * duration + totalInterest;
+    let totalPay = emi + totalInterest;
 
     document.getElementById("monthlyEmi").textContent = "Monthly Interest: ₹" + monthlyInterest.toFixed(2);
     document.getElementById("totalEmi").textContent = "Total Pay: ₹" + totalPay.toFixed(2);
