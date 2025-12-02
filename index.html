@@ -8,7 +8,7 @@
 </head>
 
 <body>
-<h2>Simple EMI Calculator</h2>
+<h2>EMI CALCULATOR </h2>
 
 <div class="box">
     <label>EMI Amount (Loan EMI):</label>
@@ -25,10 +25,12 @@
         <option value="month">Month</option>
         <option value="year">Year</option>
     </select>
-
-    <button onclick="calculate()">Calculate</button>
-
-    <h3>OUTPUT</h3>
+    <div class="button-row">
+    <button class="btn left-btn" onclick="calculate()">Calculate</button>
+    <button class="btn right-btn" onclick="resetForm()">Cancel</button>
+</div>
+<hr>
+<h3>OUTPUT</h3>
     <p id="monthlyEmi"></p>
     <p id="totalEmi"></p>
     <p id="totalInterest"></p>

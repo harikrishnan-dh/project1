@@ -1,9 +1,7 @@
-
 body {
     font-family: serif;
-    background: wheat;
     padding: 20px;
-    margin: 0;
+    background: #f5f5f5;
 }
 
 h2 {
@@ -11,90 +9,105 @@ h2 {
     margin-bottom: 20px;
 }
 
-
 .box {
-    max-width: 400px;
-    background: white;
+    max-width: 350px;
     margin: auto;
-    padding: 25px;
-    border-radius: 4px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    text-align: center;
 }
 
-
-.box label {
-    font-weight: bold;
+label {
     display: block;
+    margin-top: 12px;
+    font-weight: bold;
+}
+
+input, select {
+    width: 70%;
+    padding: 10px;
+    margin-top: 6px;
+    border: 2px solid black;
+    border-radius: 2px;
+    box-sizing: border-box;
+}
+
+.button-row {
+    display: flex;
+    justify-content: space-between; /* LEFT + RIGHT */
     margin-top: 15px;
 }
 
 
-.box input, 
-.box select {
-    width:60%;
-    padding: 10px;
-    margin-top: 5px;
-    border: 1px solid #aaa;
-    border-radius: 2px;
-    font-size: 16px;
-    box-sizing: border-box;
-}
-
-
-.box button {
-    width:90%;
+.btn {
+    width: 48%;              
     padding: 12px;
-    background: #147201;
-    border: none;
-    color: white;
-    margin-top: 20px;
     font-size: 18px;
-    border-radius: 5px;
+    border: none;
+    border-radius: 6px;
+    color: white;
     cursor: pointer;
 }
 
-.box button:hover {
-    background: #2bec04;
+
+.left-btn {
+    background-color: #006919;
+    color: white
+}
+.left-btn:hover {
+    background-color: #11e446;
 }
 
-#monthlyEmi, #totalEmi, #totalInterest {
-    font-size: 17px;
-    margin-top: 10px;
-    font-weight: bold;
+.right-btn {
+    background-color: #be0316;
+    color: white
+}
+.right-btn:hover {
+    background-color: #ff4047;
 }
 
 
+h3 {
+    margin-top: 20px;
+    
+    padding-top: 10px;
+}
 
+p {
+    font-size: 16px;
+    margin: 5px 0;
+}
 
 @media (max-width: 480px) {
     .box {
-        width: 90%;
-        padding: 20px;
+        width: 100%;
     }
 
-    .box button {
-        font-size: 16px;
-        padding: 10px;
-    }
-}
-
-
-@media (min-width: 481px) and (max-width: 768px) {
-    .box {
-        width: 80%;
-        padding: 25px;
+    button {
+        width: 100%;
+        margin-top: 10px;
     }
 }
 
 
-@media (min-width: 769px) and (max-width: 1024px) {
-    .box {
-        width: 50%;
+
+
+@media(max-width: 480px) {
+    .box button.calculate,
+    .box button.cancel {
+        width: 100%;
+        margin-right: 0;
     }
 }
 
-@media (min-width: 1025px) {
-    .box {
-        width: 40%;
+@media (max-width: 480px) {
+    .button-row {
+        flex-direction: column;
+    }
+    .btn {
+        width: 100%;
+        margin-top: 10px;
     }
 }

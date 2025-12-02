@@ -5,23 +5,33 @@ function calculate() {
     let type = document.getElementById("type").value;
 
     if (!emi || !interest || !duration) {
-        alert("Please fill all fields");
+        alert("Please enter all values");
         return;
     }
 
-    // convert year to months
-    let months = (type === "year") ? duration * 12 : duration;
+    let monthlyInterest = (emi * (interest / 100));
+    let totalInterest;
 
-    // per month interest money
-    let monthlyInterest = emi * (interest / 100);
+    if (type === "month") {
+        totalInterest = monthlyInterest * duration;
+    } else {
+        totalInterest = monthlyInterest * (duration * 12);
+    }
 
-    // total interest for duration
-    let totalInterest = monthlyInterest * months;
+    let totalPay = emi * duration + totalInterest;
 
-    // total EMI amount
-    let totalEmi = emi * months;
+    document.getElementById("monthlyEmi").textContent = "Monthly Interest: ₹" + monthlyInterest.toFixed(2);
+    document.getElementById("totalEmi").textContent = "Total Pay: ₹" + totalPay.toFixed(2);
+    document.getElementById("totalInterest").textContent = "Total Interest: ₹" + totalInterest.toFixed(2);
+}
 
-    document.getElementById("monthlyEmi").innerText = "Monthly EMI Interest: ₹ " + monthlyInterest;
-    document.getElementById("totalEmi").innerText = "Total EMI Amount: ₹ " + totalEmi;
-    document.getElementById("totalInterest").innerText = "Total Interest: ₹ " + totalInterest;
+function resetForm() {
+    document.getElementById("emiAmount").value = "";
+    document.getElementById("interest").value = "";
+    document.getElementById("duration").value = "";
+    document.getElementById("type").value = "month";
+
+    document.getElementById("monthlyEmi").textContent = "";
+    document.getElementById("totalEmi").textContent = "";
+    document.getElementById("totalInterest").textContent = "";
 }
