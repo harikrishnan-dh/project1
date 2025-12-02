@@ -22,7 +22,7 @@ function calculate() {
 
     document.getElementById("monthlyEmi").textContent = "Monthly Interest: ₹" + monthlyInterest.toFixed(2);
     document.getElementById("totalEmi").textContent = "Total Pay: ₹" + totalPay.toFixed(2);
-    document.getElementById("totalInterest").textContent = "Total Interest: ₹" + totalInterest.toFixed(2);
+    document.getElementById("totalInterest").textContent = "Total Duration Interest: ₹" + totalInterest.toFixed(2);
 }
 
 function resetForm() {
