@@ -1,25 +1,27 @@
-document.querySelector("button").addEventListener("click", function () {
-    let loanAmount = parseFloat(document.getElementById("loanAmount").value);
-    let interestRate = parseFloat(document.getElementById("interestRate").value);
-    let emiAmount = parseFloat(document.getElementById("emiAmount").value);
-    let loanTenure = parseFloat(document.getElementById("loanTenure").value);
+function calculate() {
+    let emi = parseFloat(document.getElementById("emiAmount").value);
+    let interest = parseFloat(document.getElementById("interest").value);
+    let duration = parseFloat(document.getElementById("duration").value);
+    let type = document.getElementById("type").value;
 
-    
-    let monthlyRate = interestRate / 12 / 1
-    
-    let months = loanTenure * 12;
+    if (!emi || !interest || !duration) {
+        alert("Please fill all fields");
+        return;
+    }
 
-    
-    let emi =
-        (loanAmount * monthlyRate * Math.pow(1 + monthlyRate, months)) /
-        (Math.pow(1 + monthlyRate, months) - 1);
+    // convert year to months
+    let months = (type === "year") ? duration * 12 : duration;
 
-    
-    let totalPayment = emi * months;
-    let totalInterest = totalPayment - loanAmount;
+    // per month interest money
+    let monthlyInterest = emi * (interest / 100);
 
-    
-    document.getElementById("emi").innerText = emi.toFixed(2);
-    document.getElementById("interest").innerText = totalInterest.toFixed(2);
-    document.getElementById("payment").innerText = totalPayment.toFixed(2);
-});
+    // total interest for duration
+    let totalInterest = monthlyInterest * months;
+
+    // total EMI amount
+    let totalEmi = emi * months;
+
+    document.getElementById("monthlyEmi").innerText = "Monthly EMI Interest: ₹ " + monthlyInterest;
+    document.getElementById("totalEmi").innerText = "Total EMI Amount: ₹ " + totalEmi;
+    document.getElementById("totalInterest").innerText = "Total Interest: ₹ " + totalInterest;
+}

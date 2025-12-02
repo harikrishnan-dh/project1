@@ -1,108 +1,100 @@
-/* ===== BASIC RESET ===== */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
 
-/* ===== BODY STYLE ===== */
 body {
-    background: #f5f5f5;
-    display: flex;
-    justify-content: center;
+    font-family: serif;
+    background: wheat;
     padding: 20px;
-}
-
-/* ===== CALCULATOR BOX ===== */
-.box {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    width: 100%;        /* For small mobile */
-    max-width: 400px;   /* For laptop & desktop */
-    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+    margin: 0;
 }
 
 h2 {
     text-align: center;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
-label {
-    font-size: 16px;
+
+.box {
+    max-width: 400px;
+    background: white;
+    margin: auto;
+    padding: 25px;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+
+.box label {
     font-weight: bold;
     display: block;
-    margin-top: 12px;
-}
-
-input, select {
-    width: 100%;
-    padding: 10px;
-    margin-top: 6px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-button {
-    width: 100%;
     margin-top: 15px;
-    padding: 12px;
-    background: #0066ff;
-    color: white;
+}
+
+
+.box input, 
+.box select {
+    width:60%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #aaa;
+    border-radius: 2px;
     font-size: 16px;
+    box-sizing: border-box;
+}
+
+
+.box button {
+    width:90%;
+    padding: 12px;
+    background: #147201;
     border: none;
-    border-radius: 8px;
+    color: white;
+    margin-top: 20px;
+    font-size: 18px;
+    border-radius: 5px;
     cursor: pointer;
 }
 
-button:hover {
-    background: #004acc;
+.box button:hover {
+    background: #2bec04;
 }
 
-/* ===== OUTPUT TEXT ===== */
 #monthlyEmi, #totalEmi, #totalInterest {
-    font-size: 18px;
-    font-weight: bold;
+    font-size: 17px;
     margin-top: 10px;
+    font-weight: bold;
 }
 
-/* ===== RESPONSIVE MEDIA QUERIES ===== */
 
-/* 📱 SMALL MOBILE (320px – 480px) */
+
+
 @media (max-width: 480px) {
     .box {
-        padding: 15px;
-        width: 100%;
+        width: 90%;
+        padding: 20px;
     }
 
-    h2 {
-        font-size: 20px;
-    }
-
-    input, select, button {
-        font-size: 15px;
+    .box button {
+        font-size: 16px;
         padding: 10px;
     }
 }
 
-/* 📱 LARGE MOBILES / SMALL TABLETS (481px – 768px) */
+
 @media (min-width: 481px) and (max-width: 768px) {
     .box {
-        max-width: 450px;
+        width: 80%;
+        padding: 25px;
     }
 }
 
-/* 💻 LAPTOP (769px – 1024px) */
+
 @media (min-width: 769px) and (max-width: 1024px) {
     .box {
-        max-width: 500px;
+        width: 50%;
     }
 }
 
-/* 🖥 BIG SCREENS */
 @media (min-width: 1025px) {
     .box {
-        max-width: 450px;
+        width: 40%;
     }
 }
